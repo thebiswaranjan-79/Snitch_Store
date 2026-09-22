@@ -1,4 +1,6 @@
-import {Router} from "express";
+import { Router } from "express";
+import { register } from "../controller/auth.controller.js";
+import { registerValidator } from "../validators/auth.validators.js";
 
 const router = Router();
 
@@ -9,6 +11,6 @@ const router = Router();
  * @response res.status = 201 (if successful)
  */
 
-router.post("/register", registerValidator, registerController);
+router.post("/register", registerValidator, register);
 
 export default router;
